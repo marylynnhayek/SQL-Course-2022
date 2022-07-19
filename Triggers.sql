@@ -9,7 +9,7 @@
 
 -- Exemple  #1: Supression En Cascade:
 
--- Explicatio de la situation:
+-- Explication de la situation:
 -- We want to delete the 'Sales' department in the table 'Departments'
 -- However, since we have a foreign key link between the table 
 -- 'Employees' and 'Departments' if we directly delete the department
@@ -30,7 +30,7 @@ BEGIN
     DECLARE @code char(3);
     SELECT @code = id FROM DELETED;
     DELETE FROM s_emp where dept_id=@code;
-    DELETE FROM s_dept WHERE DeptNo=@dept_id;
+    DELETE FROM s_dept WHERE DeptNo=@code;
 END; 
 
 
